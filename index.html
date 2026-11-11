@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GAME CLUB</title>
+  <meta name="description" content="GAME CLUB — game library with system requirements, gallery and AI assistant">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <div class="app">
+    <aside id="rail" class="rail glass"></aside>
+
+    <div class="content">
+      <header class="topbar">
+        <form class="search glass" action="games.html">
+          <input name="q" data-i18n-ph="search" placeholder="جستجوی بازی‌ها…">
+          <button type="submit" aria-label="search">⌕</button>
+        </form>
+        <select id="lang" class="lang glass" aria-label="language"></select>
+      </header>
+
+      <div id="notice" class="notice hidden"></div>
+
+      <div class="home">
+        <!-- Center column: banner, tiles, chart, activity -->
+        <section class="col mid">
+          <div class="hero glass">
+            <div class="hero-bg" id="hero-bg"></div>
+            <div class="hero-body">
+              <span class="kicker">GAME CLUB</span>
+              <h1 id="hero-title"></h1>
+              <p id="hero-sub" class="muted"></p>
+              <a id="hero-link" class="btn-play" href="games.html" data-i18n="btn_library">مشاهده کتابخانه</a>
+            </div>
+          </div>
+
+          <div class="trio" id="trio"></div>
+
+          <div class="glass card wave">
+            <svg id="wave" viewBox="0 0 600 150" preserveAspectRatio="none" aria-hidden="true"></svg>
+          </div>
+
+          <div class="glass card">
+            <h3 data-i18n="activity">دسته‌های پرتعداد</h3>
+            <div class="activity" id="activity"></div>
+          </div>
+        </section>
+
+        <!-- Left column: latest game, categories, platforms -->
+        <aside class="col">
+          <div class="glass card">
+            <h3 data-i18n="updates">آخرین افزوده‌شده</h3>
+            <div id="update"></div>
+          </div>
+          <div class="glass card">
+            <h3 data-i18n="categories">دسته‌بندی‌ها</h3>
+            <div class="chips" id="cats"></div>
+          </div>
+          <div class="glass card">
+            <h3 data-i18n="other_platforms">پلتفرم‌های دیگر</h3>
+            <div class="links" id="social"></div>
+          </div>
+        </aside>
+
+        <!-- Right column: totals, stats, recommendations -->
+        <aside class="col">
+          <div class="glass card ring-card">
+            <div>
+              <div class="muted" data-i18n="total_games">کل بازی‌ها</div>
+              <b class="big" id="total">—</b>
+              <div class="muted" data-i18n="avg_rating">میانگین امتیاز</div>
+            </div>
+            <div id="ring"></div>
+          </div>
+          <div class="glass card">
+            <h3 data-i18n="stats">آمار</h3>
+            <div class="stats" id="stats"></div>
+          </div>
+          <div class="glass card">
+            <h3 data-i18n="recommended">پیشنهادی</h3>
+            <div class="list" id="recommended"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <nav id="mnav" class="mobile-nav glass"></nav>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

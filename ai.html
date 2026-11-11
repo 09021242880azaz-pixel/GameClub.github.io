@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GAME CLUB — هوش مصنوعی</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body data-page="ai">
+  <div class="app">
+    <aside id="rail" class="rail glass"></aside>
+    <div class="content">
+      <header class="topbar" style="justify-content:flex-end">
+        <select id="lang" class="lang glass" aria-label="language"></select>
+      </header>
+      <div id="notice" class="notice hidden"></div>
+
+      <section class="glass ai-hero">
+        <div class="orb"></div>
+        <h1 data-i18n="ai_title">دستیار هوشمند GAME CLUB</h1>
+        <p class="muted" data-i18n="ai_sub">پیشنهاد بازی از کتابخانه واقعی ما و بررسی سازگاری سیستم شما</p>
+      </section>
+
+      <div class="ai-grid">
+        <section class="glass panel">
+          <h2 data-i18n="rec_title">پیشنهاددهنده بازی</h2>
+          <form id="rec-form">
+            <span class="field-label" data-i18n="genres">ژانرهای موردعلاقه</span>
+            <div class="chips" id="rec-genres" style="margin-bottom:14px"></div>
+            <label><span data-i18n="gameplay">سبک بازی</span><input name="gameplay" maxlength="120"></label>
+            <label><span data-i18n="mode">حالت بازی</span>
+              <select name="mode">
+                <option value="solo" data-i18n="mode_solo">تک‌نفره</option>
+                <option value="multi" data-i18n="mode_multi">چندنفره</option>
+                <option value="both" data-i18n="mode_both">هر دو</option>
+              </select>
+            </label>
+            <label><span data-i18n="interests">علایق یا بازی‌های موردعلاقه</span><textarea name="interests" rows="3" maxlength="500"></textarea></label>
+            <button class="btn" type="submit" data-i18n="submit_rec">پیشنهاد بده</button>
+          </form>
+          <div id="rec-out"></div>
+        </section>
+
+        <section class="glass panel">
+          <h2 data-i18n="pc_title">تحلیل سازگاری سیستم</h2>
+          <form id="pc-form">
+            <label><span data-i18n="game_label">بازی</span><select name="game_id" id="pc-game" required></select></label>
+            <label><span data-i18n="cpu">پردازنده</span><input name="cpu" required maxlength="120"></label>
+            <label><span data-i18n="gpu">کارت گرافیک</span><input name="gpu" required maxlength="120"></label>
+            <label><span data-i18n="ram">رم (گیگابایت)</span><input name="ram_gb" type="number" min="1" max="1024" required></label>
+            <label><span data-i18n="os">سیستم‌عامل</span><input name="os" required maxlength="120"></label>
+            <label><span data-i18n="storage">فضای آزاد (گیگابایت)</span><input name="storage_gb" type="number" min="1" max="10000" required></label>
+            <button class="btn" type="submit" data-i18n="submit_pc">بررسی سازگاری</button>
+          </form>
+          <div id="pc-out"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <nav id="mnav" class="mobile-nav glass"></nav>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="i18n.js"></script>
+  <script src="i18n-extra.js"></script>
+  <script src="app.js"></script>
+  <script src="ai.js"></script>
+</body>
+</html>

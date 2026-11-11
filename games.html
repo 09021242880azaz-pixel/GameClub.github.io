@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GAME CLUB — کتابخانه</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body data-page="games">
+  <div class="app">
+    <aside id="rail" class="rail glass"></aside>
+    <div class="content">
+      <header class="topbar">
+        <div class="search glass">
+          <input id="q" type="search" data-i18n-ph="search" placeholder="جستجوی بازی‌ها…">
+        </div>
+        <select id="sort" class="lang glass" aria-label="sort">
+          <option value="newest" data-i18n="sort_newest">جدیدترین</option>
+          <option value="rating" data-i18n="sort_rating">بالاترین امتیاز</option>
+          <option value="title" data-i18n="sort_title">عنوان</option>
+        </select>
+        <select id="lang" class="lang glass" aria-label="language"></select>
+      </header>
+      <div id="notice" class="notice hidden"></div>
+      <div class="chips" id="cats" style="margin-bottom:18px"></div>
+      <p class="count" id="count"></p>
+      <div class="grid" id="results"></div>
+    </div>
+  </div>
+  <nav id="mnav" class="mobile-nav glass"></nav>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="i18n.js"></script>
+  <script src="i18n-extra.js"></script>
+  <script src="app.js"></script>
+  <script src="pages.js"></script>
+</body>
+</html>
